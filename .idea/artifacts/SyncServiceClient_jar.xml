@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="SuncServiceClient:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/SuncServiceClient_jar</output-path>
-    <root id="archive" name="SuncServiceClient.jar">
+  <artifact type="jar" name="SyncServiceClient:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SyncServiceClient_jar</output-path>
+    <root id="archive" name="SyncServiceClient.jar">
       <element id="module-output" name="SuncServiceClient" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/gmbal-api-only.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/FastInoset.jar" path-in-jar="/" />

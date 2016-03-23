@@ -13,7 +13,12 @@ public class Test {
         client.init("http://aksndr_pc:8088/mockBasicHttpBinding_ISyncService?WSDL");
 
         Map p = client.syncOutContractData("ssdf","asdads","234123","20160212",null,"123dfsa");
+        System.out.print(p);
 
+        p = client.syncOutContractData("ssdf","asdads","234123",null,null,"123dfsa");
+        System.out.print(p);
+
+        p = client.syncOutContractURL("ssdf","asdads",null,null,"sadfasdf","123dfsa");
         System.out.print(p);
 
         p = client.syncOutContractURL("ssdf","asdads",null,"20160212","sadfasdf","123dfsa");

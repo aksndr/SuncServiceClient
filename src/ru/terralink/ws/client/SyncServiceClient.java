@@ -61,7 +61,8 @@ public class SyncServiceClient {
   public Map<String, Object> syncOutContractData(String guid, String url, String gid, String regDateStr, String regNum, String state){
     XMLGregorianCalendar regDate = null;
     try {
-      regDate = Utils.stringToXMLGregorianCalendar(regDateStr);
+      if (regDateStr!=null && !"".equals(regDateStr))
+        regDate = Utils.stringToXMLGregorianCalendar(regDateStr);
 
       ContractOut co = new ContractOut(url, gid, regDate, regNum, state);
 
@@ -79,7 +80,8 @@ public class SyncServiceClient {
   public Map<String, Object> syncOutContractURL(String guid, String url, String gid, String regDateStr, String regNum, String state){
     XMLGregorianCalendar regDate = null;
     try {
-      regDate = Utils.stringToXMLGregorianCalendar(regDateStr);
+      if (regDateStr!=null && !"".equals(regDateStr))
+        regDate = Utils.stringToXMLGregorianCalendar(regDateStr);
 
       ContractOut co = new ContractOut(url, gid, regDate, regNum, state);
 
