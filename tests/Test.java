@@ -12,16 +12,20 @@ public class Test {
         SyncServiceClient client = new SyncServiceClient();
         client.init("http://aksndr_pc:8088/mockBasicHttpBinding_ISyncService?WSDL");
 
-        Map p = client.syncOutContractData("ssdf","asdads","234123","20160212",null,"123dfsa");
+        Map p = client.syncOutContractData("adfadfs","adfadfs", "adfadfs",
+                "20110111", "20160511", "20160317",
+                "234123", "123dfsa", "sdfssdf");
         System.out.print(p);
 
-        p = client.syncOutContractData("ssdf","asdads","234123",null,null,"123dfsa");
+        p = client.syncOutContractData("adfadfs","adfadfs", "adfadfs",
+                "", "20160212", null,
+                "234123", "123dfsa", "sdfssdf");
         System.out.print(p);
 
-        p = client.syncOutContractURL("ssdf","asdads",null,null,"sadfasdf","123dfsa");
+        p = client.syncOutContractURL("ssdf","asdads","s");
         System.out.print(p);
 
-        p = client.syncOutContractURL("ssdf","asdads",null,"20160212","sadfasdf","123dfsa");
+        p = client.syncOutContractURL("ssdf","asdads","123dfsa");
         System.out.print(p);
     }
 

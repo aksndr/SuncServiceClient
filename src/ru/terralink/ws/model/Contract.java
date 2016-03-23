@@ -37,6 +37,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="Payer" type="{http://terralink.ru/}BusinessPartner"/>
  *         &lt;element name="RegInfo" type="{http://terralink.ru/}RegInfo" minOccurs="0"/>
  *         &lt;element name="State" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="StateCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="Subject" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="ValuationCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
@@ -67,6 +68,7 @@ import javax.xml.bind.annotation.XmlType;
     "payer",
     "regInfo",
     "state",
+    "stateCode",
     "subject",
     "valuationCode"
 })
@@ -108,6 +110,8 @@ public class Contract {
     protected JAXBElement<RegInfo> regInfo;
     @XmlElement(name = "State", required = true, nillable = true)
     protected String state;
+    @XmlElementRef(name = "StateCode", namespace = "http://terralink.ru/", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> stateCode;
     @XmlElementRef(name = "Subject", namespace = "http://terralink.ru/", type = JAXBElement.class, required = false)
     protected JAXBElement<String> subject;
     @XmlElementRef(name = "ValuationCode", namespace = "http://terralink.ru/", type = JAXBElement.class, required = false)
@@ -543,6 +547,30 @@ public class Contract {
      */
     public void setState(String value) {
         this.state = value;
+    }
+
+    /**
+     * Gets the value of the stateCode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public JAXBElement<String> getStateCode() {
+        return stateCode;
+    }
+
+    /**
+     * Sets the value of the stateCode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
+     */
+    public void setStateCode(JAXBElement<String> value) {
+        this.stateCode = value;
     }
 
     /**

@@ -19,9 +19,12 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Code" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Code" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="GID" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="Index" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="IsTerm" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="Name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="ParentContractType" type="{http://terralink.ru/}ContractType" minOccurs="0"/>
  *         &lt;element name="ParentGID" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -35,17 +38,26 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ContractType", propOrder = {
     "code",
     "gid",
+    "index",
+    "isTerm",
     "name",
+    "parentContractType",
     "parentGID"
 })
 public class ContractType {
 
-    @XmlElementRef(name = "Code", namespace = "http://terralink.ru/", type = JAXBElement.class, required = false)
-    protected JAXBElement<String> code;
+    @XmlElement(name = "Code", required = true, nillable = true)
+    protected String code;
     @XmlElement(name = "GID", required = true, nillable = true)
     protected String gid;
+    @XmlElement(name = "Index", required = true, nillable = true)
+    protected String index;
+    @XmlElement(name = "IsTerm")
+    protected boolean isTerm;
     @XmlElement(name = "Name", required = true, nillable = true)
     protected String name;
+    @XmlElementRef(name = "ParentContractType", namespace = "http://terralink.ru/", type = JAXBElement.class, required = false)
+    protected JAXBElement<ContractType> parentContractType;
     @XmlElementRef(name = "ParentGID", namespace = "http://terralink.ru/", type = JAXBElement.class, required = false)
     protected JAXBElement<String> parentGID;
 
@@ -54,10 +66,10 @@ public class ContractType {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public JAXBElement<String> getCode() {
+    public String getCode() {
         return code;
     }
 
@@ -66,10 +78,10 @@ public class ContractType {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     {@link String }
      *     
      */
-    public void setCode(JAXBElement<String> value) {
+    public void setCode(String value) {
         this.code = value;
     }
 
@@ -98,6 +110,46 @@ public class ContractType {
     }
 
     /**
+     * Gets the value of the index property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getIndex() {
+        return index;
+    }
+
+    /**
+     * Sets the value of the index property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setIndex(String value) {
+        this.index = value;
+    }
+
+    /**
+     * Gets the value of the isTerm property.
+     * 
+     */
+    public boolean isIsTerm() {
+        return isTerm;
+    }
+
+    /**
+     * Sets the value of the isTerm property.
+     * 
+     */
+    public void setIsTerm(boolean value) {
+        this.isTerm = value;
+    }
+
+    /**
      * Gets the value of the name property.
      * 
      * @return
@@ -119,6 +171,30 @@ public class ContractType {
      */
     public void setName(String value) {
         this.name = value;
+    }
+
+    /**
+     * Gets the value of the parentContractType property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code <}{@link ContractType }{@code >}
+     *     
+     */
+    public JAXBElement<ContractType> getParentContractType() {
+        return parentContractType;
+    }
+
+    /**
+     * Sets the value of the parentContractType property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link ContractType }{@code >}
+     *     
+     */
+    public void setParentContractType(JAXBElement<ContractType> value) {
+        this.parentContractType = value;
     }
 
     /**

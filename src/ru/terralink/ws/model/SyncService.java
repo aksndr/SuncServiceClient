@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "SyncService", targetNamespace = "http://tempuri.org/", wsdlLocation = "file:/C:/Users/Aksndr/Desktop/\u041d\u041d/SyncService.svc.wsdl")
+@WebServiceClient(name = "SyncService", targetNamespace = "http://tempuri.org/", wsdlLocation = "file:/D:/Temp/SyncService.wsdl")
 public class SyncService
     extends Service
 {
@@ -30,7 +30,7 @@ public class SyncService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/C:/Users/Aksndr/Desktop/\u041d\u041d/SyncService.svc.wsdl");
+            url = new URL("file:/D:/Temp/SyncService.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
