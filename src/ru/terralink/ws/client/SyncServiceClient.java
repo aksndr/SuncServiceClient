@@ -68,10 +68,10 @@ public class SyncServiceClient {
         XMLGregorianCalendar regDate = null;
 
         try {
-            if (regDateStr != null && !"".equals(regDateStr))
+            if (startDateStr != null && !"".equals(startDateStr))
                 startDate = Utils.stringToXMLGregorianCalendar(startDateStr);
 
-            if (regDateStr != null && !"".equals(regDateStr))
+            if (endDateStr != null && !"".equals(endDateStr))
                 endDate = Utils.stringToXMLGregorianCalendar(endDateStr);
 
             if (regDateStr != null && !"".equals(regDateStr))
